@@ -1,0 +1,246 @@
+/* The side navigation menu */
+.sidenav {
+  z-index: 1000; /* 使此物件層級在其他之上 */
+  height: 90%; /* 100% Full-height */
+  width: 80%; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  top: 0; /* Stay at the top */
+  left: -100%;
+  margin: 20px 20px 20px 20px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: white; /* Black*/
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* sidenav's objective */
+#objective-edit{
+  position: relative;
+  top: 3px;
+  left: 1.5%;
+  right: 10rem;
+  height: 88vh;
+  background-color: #fafafa;
+  border-style:solid;
+  border-color: #A5BDC6;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 5px;
+}
+
+#objective-edit .objective-attr, .objective-unit, .objective-range, .objective-adv{
+  position: relative;
+  margin: 10px 5px 5px 5px;
+  border-radius: 15px;
+  background-color:#A5BDC6;
+  width: 97%;
+}
+
+#objective-type{
+  position: relative;
+}
+
+#objective-type-button {
+  left: 2%;
+  right: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#objective-type-button button{
+  text-align: center;
+  flex-grow: 1;
+  width: 5rem;
+}
+  
+.objective-attr{
+  height: 20vh;
+}
+
+.objective-unit{
+  height: 6vh;
+}
+
+.objective-range{
+  height: 15vh;
+}
+.objective-adv{
+  height: 20vh;
+}
+
+#objective-display{
+  position: relative;
+  left: 15px;
+  right: 1rem;
+  height: 50rem;
+  margin: 20px 20px 20px 20px;
+  padding: 5px 5px 5px 5px;
+  font-size: 30px;
+}
+
+.objd{
+  position: relative;
+  margin: 5px 5px 5px 5px;
+  border-style:solid;
+  border-color: #A5BDC6;
+  border-radius: 15px;
+  background-color:white;
+  width: 130%;
+  height: 60px;
+}
+
+#add{
+  position: absolute;
+  width: 35px;
+  right: 3px;
+  left: 90%;
+  margin: 5px;
+  padding: 5;
+  background-color: #f76d43;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#add:hover{
+  background-color: #f35a2b;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: 10px 10px 10px 10px; /* 上 右 下 左 */
+  z-index: 100; /* Behind the navbar */
+  padding: 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  margin: 10px 10px 10px 10px; /* 上 右 下 左 */
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/* sidebarMenu */
+#listinfo {
+  position: relative;
+  top: 20px;
+}
+
+#damandtableinfo {
+  position: relative;
+  top: 40px;
+}
+
+#damandtable {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  color: #666666;
+}
+
+#damandtable th {
+  font-weight: normal;
+}
+
+#damandtable td {
+  font-size: 15px;
+  font-weight: light;
+  color: #666;
+  height: 30;
+}
+
+table, th, td {
+  border: 1px solid #ADACAC;
+}
+
+/* sidebar details */
+
+#user {
+  position:relative;
+  text-align: left;
+  font-size: 20px;
+}
+#dataset {
+  position:relative;
+  text-align: left;
+  font-size: 20px;
+}
+#demandlist {
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+}
+
+/* PCP-view */
+
+#pcp-view {
+  height: 50vh;
+}
+
+/* Consequence view */
+.right-align {
+  margin-right: 3%;
+}
+
+.left-align {
+  margin-left: 3%;
+}
+
+/* Consequence-table */
+#consequence-table-district {
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+  height: 38vh;
+}

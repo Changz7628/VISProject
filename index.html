@@ -1,0 +1,192 @@
+<html>
+<head>
+
+<title>Consequence Table System</title>
+<!-- 字型 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
+<script src="js/script.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script src="js/bootstrap.bundle.js"></script>
+<!-- 裡面是d3圖表，要加入defer才會運作 -->
+<script src="js/parallel_coordinate.js" defer></script> 
+
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <div class="row">
+            <div id="objective-edit" class="col-4">
+                <div id="objective-no" class="row">
+                    <h3 class="col-7">Objective NO.</h3>
+                    <h3 id="objective-no-detail" class="sidenav-info col-5">object #1</h3>
+                </div>
+                <div id="objective-type" class="">
+                    <h3>Objective type</h3>
+                    <div id="objective-type-button" class="row col-md-12">
+                        <div class="">
+                            <button id="extremum" class="btn button">Most</button>
+                        </div>
+                        <div class="">
+                            <button id="range" class="btn button">Range</button>
+                        </div>
+                        <div class="">
+                            <button id="bool" class="btn button">Have</button>
+                        </div>
+                        <div class="">
+                            <button id="precise" class="btn button">Certain</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="objective-attr" class="objective-attr">
+                    <div id="">
+                        <!-- 這邊會建立object attr -->
+                    </div>
+                </div>
+                <div id="objective-unit" class="objective-unit">
+                    <div id="">
+                        <!-- 這邊會建立object unit -->
+                    </div>
+                </div>
+                <div id="objective-range" class="objective-range">
+                    <div id="">
+                        <!-- 這邊會建立object range -->
+                    </div>
+                </div>
+                <div id="objective-adv" class="objective-adv">
+                    <div id="">
+                        <!-- 這邊會建立object range -->
+                    </div>
+                </div>
+            </div>
+            <div id="objective-display"  class="col-5 d-flex flex-column">
+                <div class="">
+                    <h2>Objective Preview</h2>
+                </div>
+                <div  id="objd1" class="objd d-flex flex-column justify-content-center">
+                    <div>
+                        <!-- 這邊會建立object 文字-->
+                    </div>
+                    <button id="add" class="btn btn-light button">—</button>
+                </div>
+                <div  id="objd2" class="objd d-flex flex-column justify-content-center">
+                    <div>
+                        <!-- 這邊會建立object 文字-->
+                    </div>
+                    <button id="add" class="btn btn-light button">—</button>
+                </div>
+                <div  id="objd3" class="objd d-flex flex-column justify-content-center">
+                    <div>
+                        <!-- 這邊會建立object 文字-->
+                    </div>
+                    <button id="add" class="btn btn-light button">—</button>
+                </div>
+                <div  id="objd4" class="objd d-flex flex-column justify-content-center">
+                    <div>
+                        <!-- 這邊會建立object 文字-->
+                    </div>
+                    <button id="add" class="btn btn-light button">—</button>
+                </div>
+                <div  id="objd5" class="objd d-flex flex-column justify-content-center">
+                    <div>
+                        <!-- 這邊會建立object 文字-->
+                    </div>
+                    <button id="add" class="btn btn-light button">—</button>
+                </div>
+            </div>
+            <button class="closebtn btn btn-light button" onclick="closeNav()">Confirm</button>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block sidebar collapse view-district">
+                <div class="sidebar-sticky">
+                    <div id="user" class="row">
+                        <h3 class="col-7">Greetings-User</h3>
+                        <h3 id="user-id" class="sidebar-info col-5">user #001</h3>
+                    </div>
+                    <div id="dataset">
+                        <div class="row">
+                            <h3 class="col-7">Dataset</h3>
+                            <h3 id="dataset-id" class="sidebar-info col-5">sample.csv</h3>
+                        </div>
+                        <div class="justify-content-end">
+                            <button class="btn btn-light button ml-auto" id="importdataset" onclick="upload()">Import</button>
+                            <button class="btn btn-light button ml-auto" id="changedataset">Change</button>
+                        </div>
+                    </div>
+                    <div id="demandlist">
+                        <h3>Demand List</h3>
+                        <div id="listinfo">
+                            <h3>List Name</h3>
+                            <button class="btn btn-light button" id="edit" onclick="openNav()">Edit</button>
+                            <button class="btn btn-light button" id="changelist">Change</button>
+                        </div>
+                        <div id="damandtableinfo">
+                            <table id="damandtable">
+                                <tr>
+                                    <th>no.</th>
+                                    <th>Demand Details</th>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>90-100元</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-md-4 my-3">
+                <div id="visualization-view">
+                    <h2>Visualization view</h2>
+                    <div class="my-2 w-100 view-district" id="pcp-view"></div>
+                </div>
+                <div id="consequence-table-view">
+                    <div class="row">
+                        <div class="col-7">
+                            <h2>Consequence Table</h2>
+                        </div>
+                        <div id="Consequence-button" class="row right-align left-align">
+                            <div class="col-3">
+                                <button class="btn btn-light button" id="export">Export</button>
+                            </div>
+                            <div class="col-1">
+                                <button class="btn btn-light button" id="switchtoPC">Switch to Parallel Coordinates</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="consequence-table-district" class="view-district">
+                        <div id="consequence-table" class="consequence-table">
+                            <!-- consequence table 內容 -->
+                        </div>
+                    </div>
+                </div>                
+            </main>
+        </div>
+    </div>
+    
+
+</body>
+</html>
